@@ -294,7 +294,7 @@ def add_plugin(placeholder, plugin_type, language, position='last-child',
             new_pos = target.position + 1
         else:
             raise Exception('position not supported: %s' % position)
-        for pl in CMSPlugin.objects.filter(language=language, parent=target.parent_id, tree_id=target.tree_id, position__gte=new_pos):
+        for pl in CMSPlugin.objects.filter(language=language, parent=target, tree_id=target.tree_id, position__gte=new_pos):
             pl.position += 1
             pl.save()
     else:
