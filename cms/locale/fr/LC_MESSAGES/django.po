@@ -12,6 +12,7 @@
 # Chary titouan <>, 2011
 # chrisglass <tribaal@gmail.com>, 2011
 # Christophe kryskool <christophe.chauvet@gmail.com>, 2013
+# Dylann CORDEL <cordel.d@free.fr>, 2014
 # Freddy L. <freddy.limpens@gmail.com>, 2014
 # Gonzo id <littlebmxdevil@gmail.com>, 2014
 # Jérôme Place <djayp83@hotmail.com>, 2014
@@ -23,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-cms\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-07 19:09+0200\n"
-"PO-Revision-Date: 2014-10-07 17:09+0000\n"
+"POT-Creation-Date: 2015-01-12 09:31+0100\n"
+"PO-Revision-Date: 2015-01-11 21:30+0000\n"
 "Last-Translator: yakky <i.spalletti@nephila.it>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/django-cms/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -80,8 +81,8 @@ msgstr "Paramètres utilisateur"
 msgid "Users"
 msgstr "Utilisateurs"
 
-#: cms_toolbar.py:167 tests/toolbar.py:379 tests/toolbar.py:381
-#: tests/toolbar.py:397 tests/toolbar.py:426 tests/toolbar.py:428
+#: cms_toolbar.py:167 tests/toolbar.py:392 tests/toolbar.py:407
+#: tests/toolbar.py:439
 #, python-format
 msgid "Logout %s"
 msgstr "Se déconnecter %s"
@@ -227,7 +228,7 @@ msgstr "Paramètres avancés"
 msgid "Generic"
 msgstr "Générique"
 
-#: plugin_base.py:280
+#: plugin_base.py:287
 msgid "There are no further settings for this plugin. Please press save."
 msgstr "Il n'y a pas d'autres réglages pour ce greffon. Cliquez sur enregistrer."
 
@@ -339,6 +340,7 @@ msgid "A instance name with this name already exists."
 msgstr "Une instance avec ce nom existe déjà"
 
 #: admin/forms.py:347 models/permissionmodels.py:71
+#: test_utils/project/customuserapp/models.py:60
 msgid "user"
 msgstr "utilisateur"
 
@@ -511,12 +513,12 @@ msgstr "Erreur ! Vous n'avez pas les permissions pour déplacer cette page. Veu
 msgid "Page moved"
 msgstr "Page déplacée"
 
-#: admin/pageadmin.py:1002 admin/placeholderadmin.py:253
-#: admin/placeholderadmin.py:299
+#: admin/pageadmin.py:1002 admin/placeholderadmin.py:257
+#: admin/placeholderadmin.py:306
 msgid "Language must be set to a supported language!"
 msgstr "Une langue disponible doit être sélectionnée !"
 
-#: admin/pageadmin.py:1007 admin/placeholderadmin.py:318
+#: admin/pageadmin.py:1007 admin/placeholderadmin.py:325
 msgid "You do not have permission to copy these plugins."
 msgstr "Vous n’avez pas la permission de copier ces greffons."
 
@@ -573,106 +575,94 @@ msgstr "Il n'existe qu'une seule traduction pour cette page"
 msgid "Title and plugins with language %(language)s was deleted"
 msgstr "Les titres et les greffons en %(language)s ont été supprimés"
 
-#: admin/pageadmin.py:1288 admin/placeholderadmin.py:509
-#: admin/placeholderadmin.py:548
+#: admin/pageadmin.py:1288 admin/placeholderadmin.py:522
+#: admin/placeholderadmin.py:561
 msgid "Are you sure?"
 msgstr "Êtes-vous sûr(e) ?"
 
-#: admin/pageadmin.py:1327
+#: admin/pageadmin.py:1328
 msgid "You do not have permission to change this page's in_navigation status"
 msgstr "Vous n'avez pas la permission de changer le statut \"Apparaître dans le menu\""
 
-#: admin/pageadmin.py:1349
+#: admin/pageadmin.py:1350
 msgid "Page Types"
 msgstr "Modèles de page"
 
-#: admin/pageadmin.py:1403
+#: admin/pageadmin.py:1407
 msgid "You do not have permission to edit this page"
 msgstr "Vous n'avez pas la permission de modifier cette page"
 
-#: admin/permissionadmin.py:84
+#: admin/permissionadmin.py:90
 msgid "View restriction"
 msgstr "Voir la restriction"
 
-#: admin/permissionadmin.py:85
+#: admin/permissionadmin.py:91
 msgid "View restrictions"
 msgstr "Voir les restrictions"
 
-#: admin/permissionadmin.py:140 models/permissionmodels.py:131
+#: admin/permissionadmin.py:148 models/permissionmodels.py:131
 msgid "Page permissions"
 msgstr "Permissions relatives à la page"
 
-#: admin/permissionadmin.py:141
+#: admin/permissionadmin.py:149
 msgid "User & Group permissions"
 msgstr "Permissions relatives aux utilisateurs et groupes"
 
-#: admin/permissionadmin.py:142
+#: admin/permissionadmin.py:150
 msgid "Page permissions management"
 msgstr "Gestion des permissions relatives aux pages"
 
-#: admin/placeholderadmin.py:74
+#: admin/placeholderadmin.py:76
 #, python-format
 msgid "Field %s not found"
 msgstr "Champ %s non trouvé"
 
-#: admin/placeholderadmin.py:80
+#: admin/placeholderadmin.py:83
 msgid "You do not have permission to edit this item"
 msgstr "Vous n'avez pas la permission de modifier cet élément"
 
-#: admin/placeholderadmin.py:229
+#: admin/placeholderadmin.py:233
 msgid "You do not have permission to add a plugin"
 msgstr "Vous n'avez pas la permission d'ajouter un greffon"
 
-#: admin/placeholderadmin.py:255
+#: admin/placeholderadmin.py:259
 msgid "Parent plugin language must be same as language!"
 msgstr "Le greffon parent doit être dans la langue courante!"
 
-#: admin/placeholderadmin.py:353
+#: admin/placeholderadmin.py:363
 msgid "You do not have permission to edit this plugin"
 msgstr "Vous n'avez pas la permission de modifier ce greffon"
 
-#: admin/placeholderadmin.py:436
+#: admin/placeholderadmin.py:446
 msgid "You have no permission to move this plugin"
 msgstr "Vous n’avez pas la permission de déplacer ce greffon"
 
-#: admin/placeholderadmin.py:486 admin/placeholderadmin.py:497
+#: admin/placeholderadmin.py:499 admin/placeholderadmin.py:510
 msgid "You do not have permission to delete this plugin"
 msgstr "Vous n’avez pas la permission de supprimer ce greffon"
 
-#: admin/placeholderadmin.py:501
+#: admin/placeholderadmin.py:514
 #, python-format
 msgid "The %(name)s plugin \"%(obj)s\" was deleted successfully."
 msgstr "Le greffon %(name)s « %(obj)s » a été supprimé avec succès."
 
-#: admin/placeholderadmin.py:507 admin/placeholderadmin.py:546
+#: admin/placeholderadmin.py:520 admin/placeholderadmin.py:559
 #, python-format
 msgid "Cannot delete %(name)s"
 msgstr "Impossible de supprimer %(name)s"
 
-#: admin/placeholderadmin.py:527 admin/placeholderadmin.py:538
+#: admin/placeholderadmin.py:540 admin/placeholderadmin.py:551
 msgid "You do not have permission to clear this placeholder"
 msgstr "Vous n’avez pas la permission de vider cette zone"
 
-#: admin/placeholderadmin.py:541
+#: admin/placeholderadmin.py:554
 #, python-format
 msgid "The placeholder \"%(obj)s\" was cleared successfully."
 msgstr "La zone « %(obj)s » a été vidé avec succès."
 
-#: admin/placeholderadmin.py:551
+#: admin/placeholderadmin.py:564
 msgid "placeholder"
 msgstr "zone"
-
-#: admin/useradmin.py:30 admin/useradmin.py:32
-msgid "User details"
-msgstr "Détails de l'utilisateur"
-
-#: admin/useradmin.py:34
-msgid "Groups"
-msgstr "Groupes"
-
-#: admin/useradmin.py:48 templates/cms/toolbar/items/login.html:6
-msgid "Password"
-msgstr "Mot de passe"
 
 #: admin/dialog/forms.py:10
 msgid "Copy permissions"
@@ -949,7 +939,7 @@ msgstr "langue"
 
 #: models/pluginmodel.py:77
 msgid "plugin_name"
-msgstr "nom du greffon"
+msgstr "Nom du bloc"
 
 #: models/pluginmodel.py:78 models/titlemodels.py:28
 msgid "creation date"
@@ -1047,7 +1037,7 @@ msgstr "Chemin"
 
 #: models/titlemodels.py:25
 msgid "has url overwrite"
-msgstr "a une URL réécrite"
+msgstr "a une url réécrite"
 
 #: models/titlemodels.py:26
 msgid "redirect"
@@ -1226,8 +1216,8 @@ msgstr "Une erreur est apparue. Merci de recharger la page"
 
 #: templates/admin/cms/page/tree/base.html:57
 #, python-format
-msgid "Are you sure you want to %%s this page?"
-msgstr "Êtes-vous sûr de vouloir %%s cette page ?"
+msgid "Are you sure you want to %s this page?"
+msgstr "Êtes-vous sûr de vouloir %s cette page ?"
 
 #: templates/admin/cms/page/tree/base.html:73
 #, python-format
@@ -1504,9 +1494,13 @@ msgstr "<strong>Échec de la connexion.</strong> Veuillez vérifier et réessaye
 msgid "This page has unpublished changes."
 msgstr "Cette page a des modifications non publiées"
 
-#: templates/cms/toolbar/items/login.html:5 toolbar/toolbar.py:22
+#: templates/cms/toolbar/items/login.html:5 toolbar/toolbar.py:23
 msgid "Username"
 msgstr "Nom d'utilisateur"
+
+#: templates/cms/toolbar/items/login.html:6
+msgid "Password"
+msgstr "Mot de passe"
 
 #: templatetags/cms_admin.py:68
 msgid "unpublished changes"
@@ -1545,52 +1539,52 @@ msgid ""
 "`. The URL of the request was: http://%(host)s%(path)s"
 msgstr "Un \"template tag\" n'a pas pu trouver la page avec les arguments « %(page_lookup)s ». L'URL de la demande était la suivante: http://%(host)s%(path)s"
 
-#: test_utils/cli.py:139 test_utils/cli.py:150
+#: test_utils/cli.py:140 test_utils/cli.py:151
 msgid "English"
 msgstr "Anglais"
 
-#: test_utils/cli.py:140 test_utils/cli.py:162 test_utils/cli.py:185
+#: test_utils/cli.py:141 test_utils/cli.py:163 test_utils/cli.py:186
 msgid "French"
 msgstr "Français"
 
-#: test_utils/cli.py:141 test_utils/cli.py:156 test_utils/cli.py:179
-#: test_utils/cli.py:198
+#: test_utils/cli.py:142 test_utils/cli.py:157 test_utils/cli.py:180
+#: test_utils/cli.py:199
 msgid "German"
 msgstr "Allemand"
 
-#: test_utils/cli.py:142 test_utils/cli.py:167
+#: test_utils/cli.py:143 test_utils/cli.py:168
 msgid "Brazilian Portuguese"
 msgstr "Bésilien Portuguais"
 
-#: test_utils/cli.py:143 test_utils/cli.py:192
+#: test_utils/cli.py:144 test_utils/cli.py:193
 msgid "Dutch"
 msgstr "Néerlandais"
 
-#: test_utils/cli.py:208
+#: test_utils/cli.py:209
 msgid "two columns"
 msgstr "deux colonnes"
 
-#: test_utils/cli.py:209
+#: test_utils/cli.py:210
 msgid "three columns"
 msgstr "trois colonnes"
 
-#: test_utils/cli.py:210
+#: test_utils/cli.py:211
 msgid "navigation examples"
 msgstr "exemples de navigation"
 
-#: test_utils/cli.py:218
+#: test_utils/cli.py:219
 msgid "sidebar column"
 msgstr "colonne latérale"
 
-#: test_utils/cli.py:223
+#: test_utils/cli.py:224
 msgid "left column"
 msgstr "colonne de gauche"
 
-#: test_utils/cli.py:228
+#: test_utils/cli.py:229
 msgid "Add a link"
 msgstr "Ajouter un lien"
 
-#: test_utils/cli.py:234
+#: test_utils/cli.py:235
 msgid "right column"
 msgstr "colonne de droite"
 
@@ -1606,11 +1600,50 @@ msgstr "Deux colonnes"
 msgid "Three columns"
 msgstr "Trois colonnes"
 
+#: test_utils/project/customuserapp/models.py:39
+msgid "username"
+msgstr "nom d'utilisateur"
+
+#: test_utils/project/customuserapp/models.py:40
+msgid ""
+"Required. 30 characters or fewer. Letters, numbers and @/./+/-/_ characters"
+msgstr "Requis. 30 caractères maximum. Lettres, nombres et caractères @/./+/-/_ autorisés"
+
+#: test_utils/project/customuserapp/models.py:43
+msgid "Enter a valid username."
+msgstr "Entrez un nom d'utilisateur valide."
+
+#: test_utils/project/customuserapp/models.py:45
+msgid "email address"
+msgstr "adresse courrielle"
+
+#: test_utils/project/customuserapp/models.py:46
+msgid "staff status"
+msgstr "état de l'équipe"
+
+#: test_utils/project/customuserapp/models.py:47
+msgid "Designates whether the user can log into this admin site."
+msgstr "Précise si l'utilisateur peut se connecter à ce site d'administration."
+
+#: test_utils/project/customuserapp/models.py:49
+msgid "active"
+msgstr "actif"
+
+#: test_utils/project/customuserapp/models.py:50
+msgid ""
+"Designates whether this user should be treated as active. Unselect this "
+"instead of deleting accounts."
+msgstr "Précise si l'utilisateur doit être considéré comme actif. Décochez ceci \nplutôt que de supprimer le compte."
+
+#: test_utils/project/customuserapp/models.py:61
+msgid "users"
+msgstr "utilisateurs"
+
 #: test_utils/project/extensionapp/cms_toolbar.py:47
 msgid "Title Extension"
 msgstr "Extension de Titre"
 
-#: test_utils/project/extensionapp/cms_toolbar.py:83
+#: test_utils/project/extensionapp/cms_toolbar.py:85
 msgid "Page Extension"
 msgstr "Extension de Page"
 
@@ -1628,11 +1661,11 @@ msgstr "Exemple d'application multilingue 1"
 
 #: test_utils/project/placeholderapp/cms_toolbar.py:21
 msgid "Example1"
-msgstr ""
+msgstr "Exemple1"
 
 #: test_utils/project/placeholderapp/cms_toolbar.py:22
 msgid "Examples"
-msgstr ""
+msgstr "Exemples"
 
 #: test_utils/project/pluginapp/plugins/extra_context/cms_plugins.py:9
 msgid "Extra Context"

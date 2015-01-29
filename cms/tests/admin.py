@@ -76,6 +76,15 @@ class AdminTestsBase(CMSTestCase):
 
 
 class AdminTestCase(AdminTestsBase):
+
+    def test_extension_not_in_admin(self):
+        admin_user, staff = self._get_guys()
+        with self.login_user_context(admin_user):
+            request = self.get_request('/admin/cms/page/1/', 'en',)
+            response = site.index(request)
+            self.assertNotContains(response, '/mytitleextension/')
+            self.assertNotContains(response, '/mypageextension/')
+
     def test_permissioned_page_list(self):
         """
         Makes sure that a user with restricted page permissions can view
@@ -309,7 +318,7 @@ class AdminTestCase(AdminTestsBase):
         page.publish('en')
         with self.login_user_context(admin_user):
             data = {'post': 'yes'}
-            with self.assertNumQueries(FuzzyInt(300, 397)):
+            with self.assertNumQueries(FuzzyInt(300, 407)):
                 response = self.client.post(URL_CMS_PAGE_DELETE % page.pk, data)
             self.assertRedirects(response, URL_CMS_PAGE)
 
@@ -326,7 +335,7 @@ class AdminTestCase(AdminTestsBase):
         page.publish('en')
         with self.login_user_context(admin_user):
             data = {'post': 'yes'}
-            with self.assertNumQueries(FuzzyInt(300, 385)):
+            with self.assertNumQueries(FuzzyInt(300, 394)):
                 response = self.client.post(URL_CMS_PAGE_DELETE % page.pk, data)
             self.assertRedirects(response, URL_CMS_PAGE)
 
@@ -659,6 +668,9 @@ class AdminTests(AdminTestsBase):
             request = self.get_request(post_data={'no': 'data'})
             old = page.in_navigation
             response = self.admin_class.change_innavigation(request, page.pk)
+            # These asserts are for #3589
+            self.assertContains(response, 'lang="en"')
+            self.assertContains(response, './%s/en/preview/' % page.pk)
             self.assertEqual(response.status_code, 200)
             page = self.reload(page)
             self.assertEqual(old, not page.in_navigation)

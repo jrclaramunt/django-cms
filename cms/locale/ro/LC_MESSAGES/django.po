@@ -4,6 +4,7 @@
 # 
 # Translators:
 # Catalin Dragomirescu <diversesite@gmail.com>, 2014
+# costel <costel@vrancea.org>, 2014
 # Denis Darii <sinednx@gmail.com>, 2011
 # IlieLipan <ilie_lipan@yahoo.com>, 2012
 # Julian C <jcuotpc@gmail.com>, 2014
@@ -12,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-cms\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-07 19:09+0200\n"
-"PO-Revision-Date: 2014-10-07 17:09+0000\n"
+"POT-Creation-Date: 2015-01-12 09:31+0100\n"
+"PO-Revision-Date: 2015-01-11 21:30+0000\n"
 "Last-Translator: yakky <i.spalletti@nephila.it>\n"
 "Language-Team: Romanian (http://www.transifex.com/projects/p/django-cms/language/ro/)\n"
 "MIME-Version: 1.0\n"
@@ -31,49 +32,49 @@ msgstr "django CMS"
 
 #: cms_plugins.py:18
 msgid "Placeholder"
-msgstr ""
+msgstr "Înlocuitor"
 
 #: cms_plugins.py:31
 msgid "Alias"
-msgstr ""
+msgstr "Alias"
 
 #: cms_plugins.py:54 cms_plugins.py:63
 msgid "Create Alias"
-msgstr ""
+msgstr "Creează alias"
 
 #: cms_toolbar.py:90
 msgid "Structure"
-msgstr ""
+msgstr "Structură"
 
 #: cms_toolbar.py:91
 msgid "Content"
-msgstr ""
+msgstr "Conținut"
 
 #: cms_toolbar.py:122
 msgid "Sites"
-msgstr "site-uri"
+msgstr "Site-uri"
 
 #: cms_toolbar.py:123
 msgid "Admin Sites"
-msgstr "Admin"
+msgstr "Site-uri admin"
 
 #: cms_toolbar.py:130
 msgid "Administration"
-msgstr ""
+msgstr "Administrare"
 
 #: cms_toolbar.py:134
 msgid "User settings"
-msgstr ""
+msgstr "Setări utilizator"
 
 #: cms_toolbar.py:148
 msgid "Users"
-msgstr "utilizatori"
+msgstr "Utilizatori"
 
-#: cms_toolbar.py:167 tests/toolbar.py:379 tests/toolbar.py:381
-#: tests/toolbar.py:397 tests/toolbar.py:426 tests/toolbar.py:428
+#: cms_toolbar.py:167 tests/toolbar.py:392 tests/toolbar.py:407
+#: tests/toolbar.py:439
 #, python-format
 msgid "Logout %s"
-msgstr ""
+msgstr "Deautintificare %s"
 
 #: cms_toolbar.py:167
 msgid "Logout"
@@ -86,35 +87,35 @@ msgstr "Limbă"
 
 #: cms_toolbar.py:302
 msgid "Publish changes"
-msgstr ""
+msgstr "Publică schimbările"
 
 #: cms_toolbar.py:304
 msgid "Publish page now"
-msgstr ""
+msgstr "Publică pagina"
 
 #: cms_toolbar.py:346 cms_toolbar.py:431
 msgid "Page settings"
-msgstr ""
+msgstr "Setari pagină"
 
 #: cms_toolbar.py:366
 #, python-format
 msgid "Add %(language)s Translation"
-msgstr ""
+msgstr "Adauga traducere în %(language)s"
 
 #: cms_toolbar.py:374
 #, python-format
 msgid "Delete %(language)s Translation"
-msgstr ""
+msgstr "Șterge traducere in limba %(language)s"
 
 #: cms_toolbar.py:383
 #, python-format
 msgid "Copy all plugins from %s"
-msgstr ""
+msgstr "Copiază toate pluginurile de la %s"
 
 #: cms_toolbar.py:384
 #, python-format
 msgid "Are you sure you want copy all plugins from %s?"
-msgstr ""
+msgstr "Sunteți sigur ca doriți să copiați toate puginurile de la %s?"
 
 #: cms_toolbar.py:398
 msgid "Pages"
@@ -122,23 +123,23 @@ msgstr "Pagini"
 
 #: cms_toolbar.py:406 templates/admin/cms/page/permissions.html:5
 msgid "Page"
-msgstr "Pagina"
+msgstr "Pagină"
 
 #: cms_toolbar.py:409
 msgid "Add Page"
-msgstr ""
+msgstr "Adaugă pagina"
 
 #: cms_toolbar.py:412
 msgid "New Page"
-msgstr ""
+msgstr "Pagină nouă"
 
 #: cms_toolbar.py:413
 msgid "New Sub Page"
-msgstr ""
+msgstr "Sub pagină noua"
 
 #: cms_toolbar.py:414
 msgid "Duplicate this Page"
-msgstr ""
+msgstr "Dedublează aceasta pagina"
 
 #: cms_toolbar.py:426
 msgid "Edit this Page"
@@ -158,31 +159,31 @@ msgstr "Permisii"
 
 #: cms_toolbar.py:462 admin/pageadmin.py:343
 msgid "Publishing dates"
-msgstr ""
+msgstr "Dăți de publicare"
 
 #: cms_toolbar.py:468
 msgid "Hide in navigation"
-msgstr ""
+msgstr "Ascunde in navigare"
 
 #: cms_toolbar.py:468
 msgid "Display in navigation"
-msgstr ""
+msgstr "Arata in navigare"
 
 #: cms_toolbar.py:475
 msgid "Unpublish page"
-msgstr "cerere de a anula publicarea"
+msgstr "Anulează publicarea"
 
 #: cms_toolbar.py:478
 msgid "Publish page"
-msgstr ""
+msgstr "Publică pagina"
 
 #: cms_toolbar.py:489
 msgid "Delete page"
-msgstr ""
+msgstr "Sterge pagina"
 
 #: cms_toolbar.py:498
 msgid "Save as Page Type"
-msgstr ""
+msgstr "Salvează ca tip pagină"
 
 #: cms_toolbar.py:503 templates/admin/cms/page/history/revision_header.html:10
 msgid "History"
@@ -190,23 +191,23 @@ msgstr "Istorie"
 
 #: cms_toolbar.py:521
 msgid "Undo"
-msgstr ""
+msgstr "Revocare"
 
 #: cms_toolbar.py:522
 msgid "Redo"
-msgstr ""
+msgstr "Refă"
 
 #: cms_toolbar.py:527
 msgid "Are you sure you want to revert to live?"
-msgstr ""
+msgstr "Ești sigur că vrei sa schimbi la live?"
 
 #: cms_toolbar.py:528
 msgid "Revert to live"
-msgstr ""
+msgstr "Schimba la live"
 
 #: cms_toolbar.py:530
 msgid "View history"
-msgstr ""
+msgstr "Vezi istoric"
 
 #: plugin_base.py:83
 msgid "Advanced options"
@@ -214,11 +215,11 @@ msgstr "Opţiuni avansate"
 
 #: plugin_base.py:100
 msgid "Generic"
-msgstr ""
+msgstr "Generic"
 
-#: plugin_base.py:280
+#: plugin_base.py:287
 msgid "There are no further settings for this plugin. Please press save."
-msgstr ""
+msgstr "Nu mai sunt si alte setari pentru acest plugin.Va rugam salvați."
 
 #: admin/forms.py:65 admin/forms.py:175 admin/forms.py:217
 msgid "The current language of the content fields."
@@ -226,7 +227,7 @@ msgstr "Limbajul curent a câmpurilor de conţinut."
 
 #: admin/forms.py:66
 msgid "Page type"
-msgstr ""
+msgstr "Tip pagină"
 
 #: admin/forms.py:67
 msgid "Title"
@@ -238,7 +239,7 @@ msgstr "Titlul predefinit"
 
 #: admin/forms.py:69
 msgid "Slug"
-msgstr "Slug"
+msgstr "Descriere URL"
 
 #: admin/forms.py:70
 msgid "The part of the title that is used in the URL"
@@ -263,7 +264,7 @@ msgstr "Înlocuește ceea ce este afişat în partea de sus a browser-ului sau �
 
 #: admin/forms.py:76
 msgid "Description meta tag"
-msgstr ""
+msgstr "Decriere meta tag"
 
 #: admin/forms.py:78
 msgid "A description of the page used by search engines."
@@ -275,7 +276,7 @@ msgstr "O altă pagină cu acest slug există deja"
 
 #: admin/forms.py:163
 msgid "Slug must not be empty."
-msgstr ""
+msgstr "Câmp descriere URL nu trebuie sa fie gol"
 
 #: admin/forms.py:197
 msgid "Application"
@@ -295,11 +296,11 @@ msgstr "Păstraţi acest câmp gol dacă percursul standard ar trebui să fie ut
 
 #: admin/forms.py:205
 msgid "X Frame Options"
-msgstr ""
+msgstr "Opțiuni X Frame"
 
 #: admin/forms.py:206
 msgid "Whether this page can be embedded in other pages or websites"
-msgstr ""
+msgstr "Daca aceasta pagină poate fi încorporată în alte pagini sau sit-uri"
 
 #: admin/forms.py:211
 msgid "Redirect"
@@ -311,7 +312,7 @@ msgstr "Redirecţionează la aceast URL."
 
 #: admin/forms.py:212
 msgid "Start typing..."
-msgstr ""
+msgstr "Incepe să scrii..."
 
 #: admin/forms.py:269
 msgid "A page with this reverse URL id exists already."
@@ -321,13 +322,14 @@ msgstr "O pagină cu acest URL id există deja."
 msgid ""
 "You selected an apphook with an \"app_name\".\n"
 "                            You must enter a unique instance name."
-msgstr ""
+msgstr "Ai slectat un apphook cu nume de aplicatie \"app_name\".\nTrebuie sa introduci un nume unic."
 
 #: admin/forms.py:307
 msgid "A instance name with this name already exists."
-msgstr ""
+msgstr "O altă instanță cu același nume există deja."
 
 #: admin/forms.py:347 models/permissionmodels.py:71
+#: test_utils/project/customuserapp/models.py:60
 msgid "user"
 msgstr "utilizator"
 
@@ -343,7 +345,7 @@ msgstr "Permisiunea de a adauga pagina, de asemenea, are nevoie de permisiunea d
 
 #: admin/forms.py:443
 msgid "can_view"
-msgstr "can_view"
+msgstr "poate_vedea"
 
 #: admin/forms.py:454
 msgid "Please select user or group first."
@@ -389,7 +391,7 @@ msgstr "Parolă nouă"
 
 #: admin/forms.py:516
 msgid "New password confirmation"
-msgstr "Confirmarea noii parole"
+msgstr "Confirmare parolă"
 
 #: admin/forms.py:541
 msgid "Email notification requires valid email address."
@@ -415,15 +417,15 @@ msgstr "Setări avansate"
 
 #: admin/pageadmin.py:349
 msgid "Change Permissions"
-msgstr ""
+msgstr "Schimbă permisiuni"
 
 #: admin/pageadmin.py:397
 msgid "Add Page Type"
-msgstr ""
+msgstr "Adaugă tip pagină"
 
 #: admin/pageadmin.py:401
 msgid "Add Page Copy"
-msgstr ""
+msgstr "Adaugă copie pagină"
 
 #: admin/pageadmin.py:607
 #, python-format
@@ -433,7 +435,7 @@ msgstr "Plugin-ul %(plugin_name)s a fost adăugat la %(placeholder)s"
 #: admin/pageadmin.py:615
 #, python-format
 msgid "Copied plugins to %(placeholder)s"
-msgstr ""
+msgstr "Am copiat pluginurie la %(placeholder)s"
 
 #: admin/pageadmin.py:626
 #, python-format
@@ -455,7 +457,7 @@ msgstr "Plugin-ul %(plugin_name)s din poziția %(position)s din %(placeholder)s 
 #: admin/pageadmin.py:658
 #, python-format
 msgid "All plugins in the placeholder \"%(name)s\" were deleted."
-msgstr ""
+msgstr "Toate pluginurile din tabelul \"%(name)s\" au fost șterse."
 
 #: admin/pageadmin.py:677
 msgid "You do not have permission to change pages."
@@ -472,40 +474,40 @@ msgstr "Nu aveți permisiunea necesară sa schimbați această pagină"
 
 #: admin/pageadmin.py:843 admin/pageadmin.py:909
 msgid "Page reverted but slug stays the same because of url collisions."
-msgstr ""
+msgstr "Pagina a fost restaurată dar descrierea URL a rămas la fel din cauza interferenței cu URL."
 
 #: admin/pageadmin.py:917
 msgid "You do not have permission to change the template"
-msgstr ""
+msgstr "Nu ai permisiunea să schimbi acest șablon."
 
 #: admin/pageadmin.py:921
 msgid "Template not valid"
-msgstr ""
+msgstr "Șablon necorespunzător"
 
 #: admin/pageadmin.py:926
 #, python-format
 msgid "Template changed to %s"
-msgstr ""
+msgstr "Șablonul a fost schimbat la %s"
 
 #: admin/pageadmin.py:929
 msgid "The template was successfully changed"
-msgstr ""
+msgstr "Acest șablon a fost schimbat cu succes."
 
 #: admin/pageadmin.py:951
 msgid ""
 "Error! You don't have permissions to move this page. Please reload the page"
-msgstr ""
+msgstr "Eroare!Nu ai premisiunea de schimbare a acestui șablon.Reîncarcă pagina."
 
 #: admin/pageadmin.py:956
 msgid "Page moved"
-msgstr ""
+msgstr "Pagină mutată"
 
-#: admin/pageadmin.py:1002 admin/placeholderadmin.py:253
-#: admin/placeholderadmin.py:299
+#: admin/pageadmin.py:1002 admin/placeholderadmin.py:257
+#: admin/placeholderadmin.py:306
 msgid "Language must be set to a supported language!"
 msgstr "Limba trebuie setată din limbile acceptate!"
 
-#: admin/pageadmin.py:1007 admin/placeholderadmin.py:318
+#: admin/pageadmin.py:1007 admin/placeholderadmin.py:325
 msgid "You do not have permission to copy these plugins."
 msgstr ""
 
@@ -562,106 +564,94 @@ msgstr "Există o singură traducere pentru această pagină"
 msgid "Title and plugins with language %(language)s was deleted"
 msgstr "Titlu şi plugin-urile cu limba %(language)s  au fost şterse"
 
-#: admin/pageadmin.py:1288 admin/placeholderadmin.py:509
-#: admin/placeholderadmin.py:548
+#: admin/pageadmin.py:1288 admin/placeholderadmin.py:522
+#: admin/placeholderadmin.py:561
 msgid "Are you sure?"
 msgstr "Esti sigur?"
 
-#: admin/pageadmin.py:1327
+#: admin/pageadmin.py:1328
 msgid "You do not have permission to change this page's in_navigation status"
 msgstr "Nu aveți permisiunile necesare să schimbați statusul in_navigation al acestei pagini"
 
-#: admin/pageadmin.py:1349
+#: admin/pageadmin.py:1350
 msgid "Page Types"
 msgstr ""
 
-#: admin/pageadmin.py:1403
+#: admin/pageadmin.py:1407
 msgid "You do not have permission to edit this page"
 msgstr "Nu aveți permisiunea necesară sa editati această pagină"
 
-#: admin/permissionadmin.py:84
+#: admin/permissionadmin.py:90
 msgid "View restriction"
 msgstr "Restricţii de vizualizare"
 
-#: admin/permissionadmin.py:85
+#: admin/permissionadmin.py:91
 msgid "View restrictions"
 msgstr "Restricţii de vizualizare"
 
-#: admin/permissionadmin.py:140 models/permissionmodels.py:131
+#: admin/permissionadmin.py:148 models/permissionmodels.py:131
 msgid "Page permissions"
 msgstr "Permisii de pagină"
 
-#: admin/permissionadmin.py:141
+#: admin/permissionadmin.py:149
 msgid "User & Group permissions"
 msgstr "Utilizator & Permisii de grup"
 
-#: admin/permissionadmin.py:142
+#: admin/permissionadmin.py:150
 msgid "Page permissions management"
 msgstr "Managementul permisiunilor paginilor"
 
-#: admin/placeholderadmin.py:74
+#: admin/placeholderadmin.py:76
 #, python-format
 msgid "Field %s not found"
 msgstr ""
 
-#: admin/placeholderadmin.py:80
+#: admin/placeholderadmin.py:83
 msgid "You do not have permission to edit this item"
 msgstr ""
 
-#: admin/placeholderadmin.py:229
+#: admin/placeholderadmin.py:233
 msgid "You do not have permission to add a plugin"
 msgstr ""
 
-#: admin/placeholderadmin.py:255
+#: admin/placeholderadmin.py:259
 msgid "Parent plugin language must be same as language!"
 msgstr ""
 
-#: admin/placeholderadmin.py:353
+#: admin/placeholderadmin.py:363
 msgid "You do not have permission to edit this plugin"
 msgstr ""
 
-#: admin/placeholderadmin.py:436
+#: admin/placeholderadmin.py:446
 msgid "You have no permission to move this plugin"
 msgstr ""
 
-#: admin/placeholderadmin.py:486 admin/placeholderadmin.py:497
+#: admin/placeholderadmin.py:499 admin/placeholderadmin.py:510
 msgid "You do not have permission to delete this plugin"
 msgstr ""
 
-#: admin/placeholderadmin.py:501
+#: admin/placeholderadmin.py:514
 #, python-format
 msgid "The %(name)s plugin \"%(obj)s\" was deleted successfully."
 msgstr ""
 
-#: admin/placeholderadmin.py:507 admin/placeholderadmin.py:546
+#: admin/placeholderadmin.py:520 admin/placeholderadmin.py:559
 #, python-format
 msgid "Cannot delete %(name)s"
 msgstr ""
 
-#: admin/placeholderadmin.py:527 admin/placeholderadmin.py:538
+#: admin/placeholderadmin.py:540 admin/placeholderadmin.py:551
 msgid "You do not have permission to clear this placeholder"
 msgstr ""
 
-#: admin/placeholderadmin.py:541
+#: admin/placeholderadmin.py:554
 #, python-format
 msgid "The placeholder \"%(obj)s\" was cleared successfully."
 msgstr ""
 
-#: admin/placeholderadmin.py:551
+#: admin/placeholderadmin.py:564
 msgid "placeholder"
 msgstr ""
-
-#: admin/useradmin.py:30 admin/useradmin.py:32
-msgid "User details"
-msgstr "Detalii utilizator"
-
-#: admin/useradmin.py:34
-msgid "Groups"
-msgstr "Grupuri"
-
-#: admin/useradmin.py:48 templates/cms/toolbar/items/login.html:6
-msgid "Password"
-msgstr "Parolă"
 
 #: admin/dialog/forms.py:10
 msgid "Copy permissions"
@@ -946,7 +936,7 @@ msgstr "data creării"
 
 #: models/pluginmodel.py:139
 msgid "<Empty>"
-msgstr ""
+msgstr "<Gol>"
 
 #: models/settingmodels.py:13
 msgid "The language for the admin interface and toolbar"
@@ -1072,7 +1062,7 @@ msgstr "Nume de utilizator:"
 #: templates/admin/cms/mail/page_user_change.html:11
 #: templates/admin/cms/mail/page_user_change.txt:6
 msgid "Password:"
-msgstr "Parola:"
+msgstr "Parolă:"
 
 #: templates/admin/cms/page/change_form.html:5
 #: templates/admin/cms/page/close_frame.html:4
@@ -1088,12 +1078,12 @@ msgstr[2] "Te rog corecteaza erorile."
 
 #: templates/admin/cms/page/change_form.html:62
 msgid "All permissions"
-msgstr "Toate permisele"
+msgstr "Toate permisiunile"
 
 #: templates/admin/cms/page/change_form.html:63
 #: templates/admin/cms/page/tree/base.html:80
 msgid "Loading..."
-msgstr "Se incarca ..."
+msgstr "Se incarcă ..."
 
 #: templates/admin/cms/page/change_form.html:75
 #: templates/admin/cms/page/submit_row.html:14
@@ -1216,7 +1206,7 @@ msgstr "A aparut o eroare. Te rog sa reincarci pagina"
 
 #: templates/admin/cms/page/tree/base.html:57
 #, python-format
-msgid "Are you sure you want to %%s this page?"
+msgid "Are you sure you want to %s this page?"
 msgstr ""
 
 #: templates/admin/cms/page/tree/base.html:73
@@ -1494,9 +1484,13 @@ msgstr ""
 msgid "This page has unpublished changes."
 msgstr ""
 
-#: templates/cms/toolbar/items/login.html:5 toolbar/toolbar.py:22
+#: templates/cms/toolbar/items/login.html:5 toolbar/toolbar.py:23
 msgid "Username"
 msgstr "Utilizator"
+
+#: templates/cms/toolbar/items/login.html:6
+msgid "Password"
+msgstr "Parolă"
 
 #: templatetags/cms_admin.py:68
 msgid "unpublished changes"
@@ -1535,52 +1529,52 @@ msgid ""
 "`. The URL of the request was: http://%(host)s%(path)s"
 msgstr ""
 
-#: test_utils/cli.py:139 test_utils/cli.py:150
+#: test_utils/cli.py:140 test_utils/cli.py:151
 msgid "English"
 msgstr "Engleză"
 
-#: test_utils/cli.py:140 test_utils/cli.py:162 test_utils/cli.py:185
+#: test_utils/cli.py:141 test_utils/cli.py:163 test_utils/cli.py:186
 msgid "French"
 msgstr "Franceză"
 
-#: test_utils/cli.py:141 test_utils/cli.py:156 test_utils/cli.py:179
-#: test_utils/cli.py:198
+#: test_utils/cli.py:142 test_utils/cli.py:157 test_utils/cli.py:180
+#: test_utils/cli.py:199
 msgid "German"
 msgstr "Germană"
 
-#: test_utils/cli.py:142 test_utils/cli.py:167
+#: test_utils/cli.py:143 test_utils/cli.py:168
 msgid "Brazilian Portuguese"
 msgstr ""
 
-#: test_utils/cli.py:143 test_utils/cli.py:192
+#: test_utils/cli.py:144 test_utils/cli.py:193
 msgid "Dutch"
 msgstr "Olandeză"
 
-#: test_utils/cli.py:208
+#: test_utils/cli.py:209
 msgid "two columns"
 msgstr "două coloane"
 
-#: test_utils/cli.py:209
+#: test_utils/cli.py:210
 msgid "three columns"
 msgstr "trei coloane"
 
-#: test_utils/cli.py:210
+#: test_utils/cli.py:211
 msgid "navigation examples"
 msgstr "exemple de navigare"
 
-#: test_utils/cli.py:218
+#: test_utils/cli.py:219
 msgid "sidebar column"
 msgstr ""
 
-#: test_utils/cli.py:223
+#: test_utils/cli.py:224
 msgid "left column"
 msgstr ""
 
-#: test_utils/cli.py:228
+#: test_utils/cli.py:229
 msgid "Add a link"
 msgstr ""
 
-#: test_utils/cli.py:234
+#: test_utils/cli.py:235
 msgid "right column"
 msgstr ""
 
@@ -1596,11 +1590,50 @@ msgstr ""
 msgid "Three columns"
 msgstr ""
 
+#: test_utils/project/customuserapp/models.py:39
+msgid "username"
+msgstr ""
+
+#: test_utils/project/customuserapp/models.py:40
+msgid ""
+"Required. 30 characters or fewer. Letters, numbers and @/./+/-/_ characters"
+msgstr ""
+
+#: test_utils/project/customuserapp/models.py:43
+msgid "Enter a valid username."
+msgstr ""
+
+#: test_utils/project/customuserapp/models.py:45
+msgid "email address"
+msgstr "adresă e-mail"
+
+#: test_utils/project/customuserapp/models.py:46
+msgid "staff status"
+msgstr ""
+
+#: test_utils/project/customuserapp/models.py:47
+msgid "Designates whether the user can log into this admin site."
+msgstr ""
+
+#: test_utils/project/customuserapp/models.py:49
+msgid "active"
+msgstr ""
+
+#: test_utils/project/customuserapp/models.py:50
+msgid ""
+"Designates whether this user should be treated as active. Unselect this "
+"instead of deleting accounts."
+msgstr ""
+
+#: test_utils/project/customuserapp/models.py:61
+msgid "users"
+msgstr ""
+
 #: test_utils/project/extensionapp/cms_toolbar.py:47
 msgid "Title Extension"
 msgstr ""
 
-#: test_utils/project/extensionapp/cms_toolbar.py:83
+#: test_utils/project/extensionapp/cms_toolbar.py:85
 msgid "Page Extension"
 msgstr ""
 

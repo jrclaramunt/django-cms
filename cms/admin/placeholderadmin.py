@@ -31,6 +31,7 @@ from django.db import router
 from django.http import HttpResponseRedirect
 
 from cms.utils import copy_plugins, permissions, get_language_from_request
+from cms.utils.compat import DJANGO_1_4
 from cms.utils.i18n import get_language_list
 from cms.utils.transaction import wrap_transaction
 
@@ -43,13 +44,14 @@ class FrontendEditableAdminMixin(object):
         Register the url for the single field edit view
         """
         from django.conf.urls import patterns, url
+        from cms.urls import SLUG_REGEXP
 
         info = "%s_%s" % (self.model._meta.app_label, self.model._meta.module_name)
         pat = lambda regex, fn: url(regex, self.admin_site.admin_view(fn), name='%s_%s' % (info, fn.__name__))
 
         url_patterns = patterns(
             '',
-            pat(r'edit-field/([0-9]+)/([a-z\-]+)/$', self.edit_field),
+            pat(r'edit-field/(%s)/([a-z\-]+)/$' % SLUG_REGEXP, self.edit_field),
         )
         return url_patterns + super(FrontendEditableAdminMixin, self).get_urls()
 
@@ -74,7 +76,8 @@ class FrontendEditableAdminMixin(object):
                 'message': force_unicode(_("Field %s not found")) % raw_fields
             }
             return render_to_response('admin/cms/page/plugin/error_form.html', context, RequestContext(request))
-        if not request.user.has_perm("%s_change" % self.model._meta.module_name):
+        if not request.user.has_perm("{0}.change_{1}".format(self.model._meta.app_label,
+                                                             self.model._meta.module_name)):
             context = {
                 'opts': opts,
                 'message': force_unicode(_("You do not have permission to edit this item"))
@@ -125,6 +128,7 @@ class PlaceholderAdminMixin(object):
         Register the plugin specific urls (add/edit/copy/remove/move)
         """
         from django.conf.urls import patterns, url
+        from cms.urls import SLUG_REGEXP
 
         info = "%s_%s" % (self.model._meta.app_label, self.model._meta.module_name)
         pat = lambda regex, fn: url(regex, self.admin_site.admin_view(fn), name='%s_%s' % (info, fn.__name__))
@@ -133,9 +137,9 @@ class PlaceholderAdminMixin(object):
             '',
             pat(r'copy-plugins/$', self.copy_plugins),
             pat(r'add-plugin/$', self.add_plugin),
-            pat(r'edit-plugin/([0-9]+)/$', self.edit_plugin),
-            pat(r'delete-plugin/([0-9]+)/$', self.delete_plugin),
-            pat(r'clear-placeholder/([0-9]+)/$', self.clear_placeholder),
+            pat(r'edit-plugin/(%s)/$' % SLUG_REGEXP, self.edit_plugin),
+            pat(r'delete-plugin/(%s)/$' % SLUG_REGEXP, self.delete_plugin),
+            pat(r'clear-placeholder/(%s)/$' % SLUG_REGEXP, self.clear_placeholder),
             pat(r'move-plugin/$', self.move_plugin),
         )
         return url_patterns + super(PlaceholderAdminMixin, self).get_urls()
@@ -271,7 +275,10 @@ class PlaceholderAdminMixin(object):
                         args=[plugin.pk])),
             'breadcrumb': plugin.get_breadcrumb(),
         }
-        return HttpResponse(json.dumps(response), content_type='application/json')
+        if DJANGO_1_4:
+            return HttpResponse(json.dumps(response), mimetype='application/json')
+        else:
+            return HttpResponse(json.dumps(response), content_type='application/json')
 
     @method_decorator(require_POST)
     @xframe_options_sameorigin
@@ -341,7 +348,10 @@ class PlaceholderAdminMixin(object):
             )
         self.post_copy_plugins(request, source_placeholder, target_placeholder, plugins)
         json_response = {'plugin_list': reduced_list, 'reload': reload_required}
-        return HttpResponse(json.dumps(json_response), content_type='application/json')
+        if DJANGO_1_4:
+            return HttpResponse(json.dumps(json_response), mimetype='application/json')
+        else:
+            return HttpResponse(json.dumps(json_response), content_type='application/json')
 
     @xframe_options_sameorigin
     def edit_plugin(self, request, plugin_id):
@@ -477,7 +487,10 @@ class PlaceholderAdminMixin(object):
                 x += 1
         self.post_move_plugin(request, source_placeholder, placeholder, plugin)
         json_response = {'reload': requires_reload(PLUGIN_MOVE_ACTION, [plugin])}
-        return HttpResponse(json.dumps(json_response), content_type='application/json')
+        if DJANGO_1_4:
+            return HttpResponse(json.dumps(json_response), mimetype='application/json')
+        else:
+            return HttpResponse(json.dumps(json_response), content_type='application/json')
 
     @xframe_options_sameorigin
     def delete_plugin(self, request, plugin_id):

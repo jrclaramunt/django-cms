@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.db import models, migrations
-from django.conf import settings
-import django.utils.timezone
 from cms.models import ACCESS_CHOICES, Page
 from cms.utils.conf import get_cms_setting
+from django.conf import settings
+from django.db import models, migrations
+import django.utils.timezone
 from django.utils.translation import ugettext_lazy as _
 
 template_choices = [(x, _(y)) for x, y in get_cms_setting('TEMPLATES')]
@@ -25,8 +25,8 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(primary_key=True, verbose_name='ID', auto_created=True, serialize=False)),
                 ('position', models.PositiveSmallIntegerField(null=True, editable=False, blank=True, verbose_name='position')),
-                ('language', models.CharField(db_index=True, max_length=15, verbose_name='language', editable=False)),
-                ('plugin_type', models.CharField(db_index=True, max_length=50, verbose_name='plugin_name', editable=False)),
+                ('language', models.CharField(db_index=True, max_length=15, verbose_name="language", editable=False)),
+                ('plugin_type', models.CharField(verbose_name='plugin name', max_length=50, editable=False, db_index=True)),
                 ('creation_date', models.DateTimeField(default=django.utils.timezone.now, verbose_name='creation date', editable=False)),
                 ('changed_date', models.DateTimeField(auto_now=True)),
                 ('level', models.PositiveIntegerField(db_index=True, editable=False)),

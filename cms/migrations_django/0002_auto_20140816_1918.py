@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.db import models, migrations
 import cms.models.static_placeholder
 import cms.models.fields
 from django.conf import settings
-import django.utils.timezone
 from django.contrib.auth import get_user_model
+from django.db import models, migrations
+import django.utils.timezone
 
 User = get_user_model()
 
@@ -125,7 +125,7 @@ class Migration(migrations.Migration):
                 ('meta_description', models.TextField(max_length=155, null=True, help_text='The text displayed in search engines.', blank=True, verbose_name='description')),
                 ('slug', models.SlugField(max_length=255, verbose_name='slug')),
                 ('path', models.CharField(db_index=True, max_length=255, verbose_name='Path')),
-                ('has_url_overwrite', models.BooleanField(db_index=True, default=False, editable=False, verbose_name='has url overwrite')),
+                ('has_url_overwrite', models.BooleanField(default=False, verbose_name='has URL overwrite', db_index=True, editable=False)),
                 ('redirect', models.CharField(max_length=255, null=True, blank=True, verbose_name='redirect')),
                 ('creation_date', models.DateTimeField(default=django.utils.timezone.now, verbose_name='creation date', editable=False)),
                 ('published', models.BooleanField(default=False, verbose_name='is published')),

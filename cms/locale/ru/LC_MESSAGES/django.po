@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-cms\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-07 19:09+0200\n"
-"PO-Revision-Date: 2014-10-07 17:09+0000\n"
+"POT-Creation-Date: 2015-01-12 09:31+0100\n"
+"PO-Revision-Date: 2015-01-11 21:30+0000\n"
 "Last-Translator: yakky <i.spalletti@nephila.it>\n"
 "Language-Team: Russian (http://www.transifex.com/projects/p/django-cms/language/ru/)\n"
 "MIME-Version: 1.0\n"
@@ -78,8 +78,8 @@ msgstr "Настройки пользователя"
 msgid "Users"
 msgstr "Пользователи"
 
-#: cms_toolbar.py:167 tests/toolbar.py:379 tests/toolbar.py:381
-#: tests/toolbar.py:397 tests/toolbar.py:426 tests/toolbar.py:428
+#: cms_toolbar.py:167 tests/toolbar.py:392 tests/toolbar.py:407
+#: tests/toolbar.py:439
 #, python-format
 msgid "Logout %s"
 msgstr "Выход %s"
@@ -225,7 +225,7 @@ msgstr "Расширенные настройки"
 msgid "Generic"
 msgstr "Общий"
 
-#: plugin_base.py:280
+#: plugin_base.py:287
 msgid "There are no further settings for this plugin. Please press save."
 msgstr "Для плагина настроек больше нет. Пожалуйста, сохраните изменения."
 
@@ -337,6 +337,7 @@ msgid "A instance name with this name already exists."
 msgstr "Приложение с таким именем уже существует."
 
 #: admin/forms.py:347 models/permissionmodels.py:71
+#: test_utils/project/customuserapp/models.py:60
 msgid "user"
 msgstr "пользователь"
 
@@ -509,12 +510,12 @@ msgstr "Ошибка! Вам не достаточно прав для пере�
 msgid "Page moved"
 msgstr "Страница перемещена"
 
-#: admin/pageadmin.py:1002 admin/placeholderadmin.py:253
-#: admin/placeholderadmin.py:299
+#: admin/pageadmin.py:1002 admin/placeholderadmin.py:257
+#: admin/placeholderadmin.py:306
 msgid "Language must be set to a supported language!"
 msgstr "Язык должен быть установлен из списка поддерживаемых языков!"
 
-#: admin/pageadmin.py:1007 admin/placeholderadmin.py:318
+#: admin/pageadmin.py:1007 admin/placeholderadmin.py:325
 msgid "You do not have permission to copy these plugins."
 msgstr "У вас нет прав на копирование этих плагинов."
 
@@ -571,106 +572,94 @@ msgstr "Для данной страницы создан только один 
 msgid "Title and plugins with language %(language)s was deleted"
 msgstr "Заголовок и плагин на %(language)s удалён"
 
-#: admin/pageadmin.py:1288 admin/placeholderadmin.py:509
-#: admin/placeholderadmin.py:548
+#: admin/pageadmin.py:1288 admin/placeholderadmin.py:522
+#: admin/placeholderadmin.py:561
 msgid "Are you sure?"
 msgstr "Вы уверены?"
 
-#: admin/pageadmin.py:1327
+#: admin/pageadmin.py:1328
 msgid "You do not have permission to change this page's in_navigation status"
 msgstr "У вас нет прав для изменения статуса \"в навигации\" для данной страницы"
 
-#: admin/pageadmin.py:1349
+#: admin/pageadmin.py:1350
 msgid "Page Types"
 msgstr "Типы страниц"
 
-#: admin/pageadmin.py:1403
+#: admin/pageadmin.py:1407
 msgid "You do not have permission to edit this page"
 msgstr "У вас нет прав для редактирования данной страницы"
 
-#: admin/permissionadmin.py:84
+#: admin/permissionadmin.py:90
 msgid "View restriction"
 msgstr "Ограничене просмотра"
 
-#: admin/permissionadmin.py:85
+#: admin/permissionadmin.py:91
 msgid "View restrictions"
 msgstr "Ограничения просмотра"
 
-#: admin/permissionadmin.py:140 models/permissionmodels.py:131
+#: admin/permissionadmin.py:148 models/permissionmodels.py:131
 msgid "Page permissions"
 msgstr "Права доступа к странице"
 
-#: admin/permissionadmin.py:141
+#: admin/permissionadmin.py:149
 msgid "User & Group permissions"
 msgstr "Права доступа пользователя и группы"
 
-#: admin/permissionadmin.py:142
+#: admin/permissionadmin.py:150
 msgid "Page permissions management"
 msgstr "Управление правами доступа к странице"
 
-#: admin/placeholderadmin.py:74
+#: admin/placeholderadmin.py:76
 #, python-format
 msgid "Field %s not found"
 msgstr "Поле %s не найдено"
 
-#: admin/placeholderadmin.py:80
+#: admin/placeholderadmin.py:83
 msgid "You do not have permission to edit this item"
 msgstr "У вас нет прав на редактирование данного элемента"
 
-#: admin/placeholderadmin.py:229
+#: admin/placeholderadmin.py:233
 msgid "You do not have permission to add a plugin"
 msgstr "У вас нет прав на добавление плагинов"
 
-#: admin/placeholderadmin.py:255
+#: admin/placeholderadmin.py:259
 msgid "Parent plugin language must be same as language!"
 msgstr "Язык должен совпадать с языком родительского плагина"
 
-#: admin/placeholderadmin.py:353
+#: admin/placeholderadmin.py:363
 msgid "You do not have permission to edit this plugin"
 msgstr "У вас нет прав на редактирование данного плагина"
 
-#: admin/placeholderadmin.py:436
+#: admin/placeholderadmin.py:446
 msgid "You have no permission to move this plugin"
 msgstr "У вас нет прав на перемещение данного плагина"
 
-#: admin/placeholderadmin.py:486 admin/placeholderadmin.py:497
+#: admin/placeholderadmin.py:499 admin/placeholderadmin.py:510
 msgid "You do not have permission to delete this plugin"
 msgstr "У вас нет прав на удаление данного плагина"
 
-#: admin/placeholderadmin.py:501
+#: admin/placeholderadmin.py:514
 #, python-format
 msgid "The %(name)s plugin \"%(obj)s\" was deleted successfully."
 msgstr "Плагин %(name)s \"%(obj)s\" был успешно удален."
 
-#: admin/placeholderadmin.py:507 admin/placeholderadmin.py:546
+#: admin/placeholderadmin.py:520 admin/placeholderadmin.py:559
 #, python-format
 msgid "Cannot delete %(name)s"
 msgstr "Не могу удалить %(name)s"
 
-#: admin/placeholderadmin.py:527 admin/placeholderadmin.py:538
+#: admin/placeholderadmin.py:540 admin/placeholderadmin.py:551
 msgid "You do not have permission to clear this placeholder"
 msgstr "У вас нет прав очистить содержимое этой именованной области"
 
-#: admin/placeholderadmin.py:541
+#: admin/placeholderadmin.py:554
 #, python-format
 msgid "The placeholder \"%(obj)s\" was cleared successfully."
 msgstr "Именованная область \"%(obj)s\" была успешно очищена."
 
-#: admin/placeholderadmin.py:551
+#: admin/placeholderadmin.py:564
 msgid "placeholder"
 msgstr "плэйсхолдер"
-
-#: admin/useradmin.py:30 admin/useradmin.py:32
-msgid "User details"
-msgstr "Информация о пользователе"
-
-#: admin/useradmin.py:34
-msgid "Groups"
-msgstr "Группы"
-
-#: admin/useradmin.py:48 templates/cms/toolbar/items/login.html:6
-msgid "Password"
-msgstr "Пароль"
 
 #: admin/dialog/forms.py:10
 msgid "Copy permissions"
@@ -1225,8 +1214,8 @@ msgstr "Возникла ошибка. Пожалуйста перезагруз
 
 #: templates/admin/cms/page/tree/base.html:57
 #, python-format
-msgid "Are you sure you want to %%s this page?"
-msgstr "Вы уверены, что хотите эту страницу %%s?"
+msgid "Are you sure you want to %s this page?"
+msgstr "Вы уверены, что хотите эту страницу %s?"
 
 #: templates/admin/cms/page/tree/base.html:73
 #, python-format
@@ -1503,9 +1492,13 @@ msgstr "<strong>Вход не удался.</strong> Проверьте ваши
 msgid "This page has unpublished changes."
 msgstr "Данная страница содержит неопубликованные изменения."
 
-#: templates/cms/toolbar/items/login.html:5 toolbar/toolbar.py:22
+#: templates/cms/toolbar/items/login.html:5 toolbar/toolbar.py:23
 msgid "Username"
 msgstr "Имя пользователя"
+
+#: templates/cms/toolbar/items/login.html:6
+msgid "Password"
+msgstr "Пароль"
 
 #: templatetags/cms_admin.py:68
 msgid "unpublished changes"
@@ -1544,52 +1537,52 @@ msgid ""
 "`. The URL of the request was: http://%(host)s%(path)s"
 msgstr "Тег шаблона не может найти страницу с параметрами поиска `%(page_lookup)s\n`. URL запроса: http://%(host)s%(path)s"
 
-#: test_utils/cli.py:139 test_utils/cli.py:150
+#: test_utils/cli.py:140 test_utils/cli.py:151
 msgid "English"
 msgstr "Английский"
 
-#: test_utils/cli.py:140 test_utils/cli.py:162 test_utils/cli.py:185
+#: test_utils/cli.py:141 test_utils/cli.py:163 test_utils/cli.py:186
 msgid "French"
 msgstr "Французский"
 
-#: test_utils/cli.py:141 test_utils/cli.py:156 test_utils/cli.py:179
-#: test_utils/cli.py:198
+#: test_utils/cli.py:142 test_utils/cli.py:157 test_utils/cli.py:180
+#: test_utils/cli.py:199
 msgid "German"
 msgstr "Немецкий"
 
-#: test_utils/cli.py:142 test_utils/cli.py:167
+#: test_utils/cli.py:143 test_utils/cli.py:168
 msgid "Brazilian Portuguese"
 msgstr "Бразильский Португальский"
 
-#: test_utils/cli.py:143 test_utils/cli.py:192
+#: test_utils/cli.py:144 test_utils/cli.py:193
 msgid "Dutch"
 msgstr "Нидерландский"
 
-#: test_utils/cli.py:208
+#: test_utils/cli.py:209
 msgid "two columns"
 msgstr "две колонки"
 
-#: test_utils/cli.py:209
+#: test_utils/cli.py:210
 msgid "three columns"
 msgstr "три колонки"
 
-#: test_utils/cli.py:210
+#: test_utils/cli.py:211
 msgid "navigation examples"
 msgstr "примеры навигации"
 
-#: test_utils/cli.py:218
+#: test_utils/cli.py:219
 msgid "sidebar column"
 msgstr "боковая колонка"
 
-#: test_utils/cli.py:223
+#: test_utils/cli.py:224
 msgid "left column"
 msgstr "левая колонка"
 
-#: test_utils/cli.py:228
+#: test_utils/cli.py:229
 msgid "Add a link"
 msgstr "Добавить ссылку"
 
-#: test_utils/cli.py:234
+#: test_utils/cli.py:235
 msgid "right column"
 msgstr "правая колонка"
 
@@ -1605,11 +1598,50 @@ msgstr "Две колонки"
 msgid "Three columns"
 msgstr "Три колонки"
 
+#: test_utils/project/customuserapp/models.py:39
+msgid "username"
+msgstr "Имя пользователя"
+
+#: test_utils/project/customuserapp/models.py:40
+msgid ""
+"Required. 30 characters or fewer. Letters, numbers and @/./+/-/_ characters"
+msgstr "Обязательное. Максимум 30 символов. Буквы, цифры и символы @/./+/-/_ "
+
+#: test_utils/project/customuserapp/models.py:43
+msgid "Enter a valid username."
+msgstr "Введите действующее имя пользователя."
+
+#: test_utils/project/customuserapp/models.py:45
+msgid "email address"
+msgstr "mailto"
+
+#: test_utils/project/customuserapp/models.py:46
+msgid "staff status"
+msgstr "статус персонал"
+
+#: test_utils/project/customuserapp/models.py:47
+msgid "Designates whether the user can log into this admin site."
+msgstr "Обозначает, может ли пользователь войти в админку сайта."
+
+#: test_utils/project/customuserapp/models.py:49
+msgid "active"
+msgstr "активен"
+
+#: test_utils/project/customuserapp/models.py:50
+msgid ""
+"Designates whether this user should be treated as active. Unselect this "
+"instead of deleting accounts."
+msgstr "Обозначает, что пользователь должен рассматриваться как активный. Отмените выбор вместо удаления учетной записи."
+
+#: test_utils/project/customuserapp/models.py:61
+msgid "users"
+msgstr "пользователи"
+
 #: test_utils/project/extensionapp/cms_toolbar.py:47
 msgid "Title Extension"
 msgstr "Расширение заголовка"
 
-#: test_utils/project/extensionapp/cms_toolbar.py:83
+#: test_utils/project/extensionapp/cms_toolbar.py:85
 msgid "Page Extension"
 msgstr "Расширение страницы"
 
@@ -1627,11 +1659,11 @@ msgstr "Приложение МогоязычныйПример1"
 
 #: test_utils/project/placeholderapp/cms_toolbar.py:21
 msgid "Example1"
-msgstr ""
+msgstr "Пример1"
 
 #: test_utils/project/placeholderapp/cms_toolbar.py:22
 msgid "Examples"
-msgstr ""
+msgstr "Примеры"
 
 #: test_utils/project/pluginapp/plugins/extra_context/cms_plugins.py:9
 msgid "Extra Context"
