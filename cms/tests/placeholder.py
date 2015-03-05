@@ -39,6 +39,7 @@ from cms.test_utils.project.placeholderapp.models import (
     MultilingualExample1,
     TwoPlaceholderExample,
 )
+from cms.test_utils.project.sampleapp.models import Category
 from cms.test_utils.testcases import CMSTestCase
 from cms.test_utils.util.context_managers import (SettingsOverride, UserLoginContext)
 from cms.test_utils.util.mock import AttributeObject
@@ -305,6 +306,20 @@ class PlaceholderTestCase(CMSTestCase, UnittestCompatMixin):
 
     def test_placeholder_field_no_related_name(self):
         self.assertRaises(ValueError, PlaceholderField, 'placeholder', related_name='+')
+
+    def test_placeholder_field_db_table(self):
+        """
+        Test for leaking Django 1.7 Model._meta.db_table monkeypatching
+        on sqlite See #3891
+        This test for a side-effect of the above which prevents placeholder
+        fields to return the 
+        """
+        example = Category.objects.create(
+            name='category',
+            parent=None
+        )
+        self.assertEqual(example.description._get_attached_fields()[0].model, Category)
+        self.assertEqual(len(example.description._get_attached_fields()), 1)
 
     def test_placeholder_field_valid_slotname(self):
         self.assertRaises(ImproperlyConfigured, PlaceholderField, 10)
@@ -821,6 +836,121 @@ class PlaceholderModelTests(CMSTestCase):
         ph = Placeholder.objects.create(slot='test', default_width=300)
         result = force_unicode(ph)
         self.assertEqual(result, u'test')
+
+    def test_request_placeholders_permission_check_model(self):
+        # Setup instance
+        ex = Example1(
+            char_1='one',
+            char_2='two',
+            char_3='tree',
+            char_4='four'
+        )
+        ex.save()
+        page_en = create_page('page_en', 'col_two.html', 'en')
+
+        class NoPushPopContext(SekizaiContext):
+            def push(self):
+                pass
+
+            pop = push
+
+        context_en = NoPushPopContext()
+
+        # request.placeholders is populated for superuser
+        context_en['request'] = self.get_request(language="en", page=page_en)
+        context_en['request'].user = self.get_superuser()
+        render_placeholder(ex.placeholder, context_en)
+        self.assertEqual(len(context_en['request'].placeholders), 1)
+        self.assertIn(ex.placeholder, context_en['request'].placeholders)
+
+        # request.placeholders is not populated for staff user with no permission
+        user = self.get_staff_user_with_no_permissions()
+        context_en['request'] = self.get_request(language="en", page=page_en)
+        context_en['request'].user = user
+        render_placeholder(ex.placeholder, context_en)
+        self.assertEqual(len(context_en['request'].placeholders), 0)
+        self.assertNotIn(ex.placeholder, context_en['request'].placeholders)
+
+        # request.placeholders is populated for staff user with permission on the model
+        user.user_permissions.add(Permission.objects.get(codename='change_example1'))
+        context_en['request'] = self.get_request(language="en", page=page_en)
+        context_en['request'].user = get_user_model().objects.get(pk=user.pk)
+        render_placeholder(ex.placeholder, context_en)
+        self.assertEqual(len(context_en['request'].placeholders), 1)
+        self.assertIn(ex.placeholder, context_en['request'].placeholders)
+
+    def test_request_placeholders_permission_check_page(self):
+        page_en = create_page('page_en', 'col_two.html', 'en')
+        placeholder_en = page_en.placeholders.get(slot='col_left')
+
+        class NoPushPopContext(SekizaiContext):
+            def push(self):
+                pass
+
+            pop = push
+
+        context_en = NoPushPopContext()
+
+        # request.placeholders is populated for superuser
+        context_en['request'] = self.get_request(language="en", page=page_en)
+        context_en['request'].user = self.get_superuser()
+        render_placeholder(placeholder_en, context_en)
+        self.assertEqual(len(context_en['request'].placeholders), 1)
+        self.assertIn(placeholder_en, context_en['request'].placeholders)
+
+        # request.placeholders is not populated for staff user with no permission
+        user = self.get_staff_user_with_no_permissions()
+        context_en['request'] = self.get_request(language="en", page=page_en)
+        context_en['request'].user = user
+        render_placeholder(placeholder_en, context_en)
+        self.assertEqual(len(context_en['request'].placeholders), 0)
+        self.assertNotIn(placeholder_en, context_en['request'].placeholders)
+
+        # request.placeholders is populated for staff user with permission on the model
+        user.user_permissions.add(Permission.objects.get(codename='change_page'))
+        context_en['request'] = self.get_request(language="en", page=page_en)
+        context_en['request'].user = get_user_model().objects.get(pk=user.pk)
+        render_placeholder(placeholder_en, context_en)
+        self.assertEqual(len(context_en['request'].placeholders), 1)
+        self.assertIn(placeholder_en, context_en['request'].placeholders)
+
+    def test_request_placeholders_permission_check_templatetag(self):
+        """
+        Tests that {% render_placeholder %} templatetag check for placeholder permission
+        """
+        page_en = create_page('page_en', 'col_two.html', 'en')
+        ex1 = Example1(char_1="char_1", char_2="char_2", char_3="char_3",
+                       char_4="char_4")
+        ex1.save()
+        template = '{% load cms_tags %}{% render_placeholder ex1.placeholder %}'
+
+        context = RequestContext(self.get_request(language="en", page=page_en), {'ex1': ex1})
+
+        # request.placeholders is populated for superuser
+        context['request'] = self.get_request(language="en", page=page_en)
+        context['request'].user = self.get_superuser()
+        template_obj = Template(template)
+        template_obj.render(context)
+        self.assertEqual(len(context['request'].placeholders), 2)
+        self.assertIn(ex1.placeholder, context['request'].placeholders)
+
+        # request.placeholders is not populated for staff user with no permission
+        user = self.get_staff_user_with_no_permissions()
+        context['request'] = self.get_request(language="en", page=page_en)
+        context['request'].user = user
+        template_obj = Template(template)
+        template_obj.render(context)
+        self.assertEqual(len(context['request'].placeholders), 0)
+        self.assertNotIn(ex1.placeholder, context['request'].placeholders)
+
+        # request.placeholders is populated for staff user with permission on the model
+        user.user_permissions.add(Permission.objects.get(codename='change_example1'))
+        context['request'] = self.get_request(language="en", page=page_en)
+        context['request'].user = get_user_model().objects.get(pk=user.pk)
+        template_obj = Template(template)
+        template_obj.render(context)
+        self.assertEqual(len(context['request'].placeholders), 2)
+        self.assertIn(ex1.placeholder, context['request'].placeholders)
 
     def test_excercise_get_attached_model(self):
         ph = Placeholder.objects.create(slot='test', default_width=300)
