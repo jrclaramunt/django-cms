@@ -22,6 +22,7 @@ page_moved = Signal(providing_args=["instance"])
 
 # fired after page gets published - copied to public model - there may be more
 # than one instances published before this signal gets called
+pre_publish = Signal(providing_args=["instance", "language"])
 post_publish = Signal(providing_args=["instance", "language"])
 post_unpublish = Signal(providing_args=["instance", "language"])
 

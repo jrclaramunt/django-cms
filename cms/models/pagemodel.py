@@ -544,6 +544,10 @@ class Page(with_metaclass(PageMetaClass, MPTTModel)):
 
         :returns: True if page was successfully published.
         """
+        import cms.signals as cms_signals
+
+        cms_signals.pre_publish.send(sender=Page, instance=self, language=language)
+
         # Publish can only be called on draft pages
         if not self.publisher_is_draft:
             raise PublicIsUnmodifiable('The public instance cannot be published. Use draft.')
@@ -641,7 +645,7 @@ class Page(with_metaclass(PageMetaClass, MPTTModel)):
             elif page.get_publisher_state(language) == PUBLISHER_STATE_PENDING:
                 page.publish(language)
                 # fire signal after publishing is done
-        import cms.signals as cms_signals
+        # import cms.signals as cms_signals
 
         cms_signals.post_publish.send(sender=Page, instance=self, language=language)
 
