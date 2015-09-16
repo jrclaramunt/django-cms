@@ -647,10 +647,10 @@ class Page(with_metaclass(PageMetaClass, MPTTModel)):
                 # fire signal after publishing is done
         # import cms.signals as cms_signals
 
-        cms_signals.post_publish.send(sender=Page, instance=self, language=language)
-
         from cms.views import invalidate_cms_page_cache
         invalidate_cms_page_cache()
+
+        cms_signals.post_publish.send(sender=Page, instance=self, language=language)
 
         return published
 
